@@ -11,7 +11,8 @@ async function getSegmenter(): Promise<ImageSegmenter> {
     segmenterPromise = (async () => {
       const fileset = await FilesetResolver.forVisionTasks(WASM_PATH);
       return ImageSegmenter.createFromOptions(fileset, {
-        baseOptions: { modelAssetPath: SEGMENTER_MODEL_PATH },
+        // CPU delegate for the same reason as face detection: works without WebGL.
+        baseOptions: { modelAssetPath: SEGMENTER_MODEL_PATH, delegate: 'CPU' },
         runningMode: 'IMAGE',
         outputCategoryMask: false,
         outputConfidenceMasks: true,

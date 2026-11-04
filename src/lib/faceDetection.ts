@@ -12,7 +12,12 @@ async function getLandmarker(): Promise<FaceLandmarker> {
     landmarkerPromise = (async () => {
       const fileset = await FilesetResolver.forVisionTasks(WASM_PATH);
       return FaceLandmarker.createFromOptions(fileset, {
-        baseOptions: { modelAssetPath: FACE_MODEL_PATH },
+        // Use the CPU (XNNPACK) delegate instead of the default GPU/WebGL one.
+        // Many machines can't create a WebGL context (hardware accel off, GPU
+        // blocklist, locked-down Safari); there the GPU graph starts but crashes
+        // at detect() with "Cannot read properties of undefined (reading
+        // 'activeTexture')". CPU needs no WebGL and is plenty fast for one image.
+        baseOptions: { modelAssetPath: FACE_MODEL_PATH, delegate: 'CPU' },
         runningMode: 'IMAGE',
         numFaces: 1,
         outputFaceBlendshapes: true,
