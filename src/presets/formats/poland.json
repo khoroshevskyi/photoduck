@@ -1,0 +1,24 @@
+{
+  "id": "poland",
+  "order": 2,
+  "name": "Poland 35 × 45 mm",
+  "shortName": "Poland",
+  "badge": "35 × 45 mm",
+  "note": "Polish passport & ID — 35 × 45 mm, plain white background, neutral expression.",
+  "photoMm": { "w": 35, "h": 45 },
+  "dpi": 300,
+  "faceHeightMm": { "min": 32, "max": 36, "target": 34 },
+  "crownTopMarginMm": 5,
+  "eyeLineFromBottomMm": { "min": 20, "max": 34 },
+  "backgroundOptions": [
+    { "id": "white", "label": "White", "color": "#ffffff" }
+  ],
+  "defaultBackgroundColor": "#ffffff",
+  "backgroundReplacementPolicy": "discouraged",
+  "backgroundCheck": {
+    "label": "plain white",
+    "targetColor": "#ffffff",
+    "colorToleranceDelta": 26,
+    "uniformityDelta": 20
+  }
+}

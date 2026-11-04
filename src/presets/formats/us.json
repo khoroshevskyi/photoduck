@@ -1,0 +1,25 @@
+{
+  "id": "us",
+  "order": 3,
+  "name": "US passport / visa 2 × 2 in",
+  "shortName": "American",
+  "badge": "2 × 2 in",
+  "note": "United States passport & visa — 2 × 2 in (50.8 mm), white background.",
+  "photoMm": { "w": 50.8, "h": 50.8 },
+  "dpi": 300,
+  "faceHeightMm": { "min": 25, "max": 35, "target": 30 },
+  "crownTopMarginMm": 7,
+  "eyeLineFromBottomMm": { "min": 28, "max": 35 },
+  "backgroundOptions": [
+    { "id": "white", "label": "White", "color": "#ffffff" },
+    { "id": "off-white", "label": "Off-white", "color": "#f7f7f4" }
+  ],
+  "defaultBackgroundColor": "#ffffff",
+  "backgroundReplacementPolicy": "prohibited",
+  "backgroundCheck": {
+    "label": "plain white or off-white",
+    "targetColor": "#ffffff",
+    "colorToleranceDelta": 34,
+    "uniformityDelta": 22
+  }
+}

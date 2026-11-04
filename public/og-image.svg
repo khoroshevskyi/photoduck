@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1200 630"
+   font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+   version="1.1"
+   id="svg40"
+   sodipodi:docname="og-image.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview40"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.6735159"
+     inkscape:cx="584.24753"
+     inkscape:cy="330.35597"
+     inkscape:window-width="1304"
+     inkscape:window-height="666"
+     inkscape:window-x="0"
+     inkscape:window-y="33"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg40" />
+  <defs
+     id="defs23">
+    <linearGradient
+       id="bg"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#f3f9fb"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#e0f2f5"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       id="gold"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#b8862f"
+         id="stop3" />
+      <stop
+         offset="0.5"
+         stop-color="#f3e3a6"
+         id="stop4" />
+      <stop
+         offset="1"
+         stop-color="#9c6f22"
+         id="stop5" />
+    </linearGradient>
+    <linearGradient
+       id="painting"
+       x1="0"
+       y1="0"
+       x2="0.4"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#3b5a4a"
+         id="stop6" />
+      <stop
+         offset="1"
+         stop-color="#241c12"
+         id="stop7" />
+    </linearGradient>
+    <linearGradient
+       id="chip"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#0d6e85"
+         id="stop8" />
+      <stop
+         offset="1"
+         stop-color="#14a0b4"
+         id="stop9" />
+    </linearGradient>
+    <clipPath
+       id="paintClip">
+      <rect
+         x="150"
+         y="196"
+         width="244"
+         height="300"
+         rx="6"
+         id="rect9" />
+    </clipPath>
+    <!-- The photoDuck mascot: a dapper cartoon duck (top hat, mustache, bow tie). -->
+    <g
+       id="duck"
+       stroke="#1a1a1a"
+       stroke-width="6.5"
+       stroke-linejoin="round"
+       stroke-linecap="round">
+      <path
+         d="M120 64 C 184 64, 220 112, 220 166 C 220 222, 178 252, 120 252 C 62 252, 20 222, 20 166 C 20 112, 56 64, 120 64 Z"
+         fill="#ffffff"
+         id="path10" />
+      <g
+         transform="rotate(-12 120 70)"
+         id="g11">
+        <ellipse
+           cx="120"
+           cy="70"
+           rx="64"
+           ry="14"
+           fill="#1a1a1a"
+           id="ellipse10" />
+        <path
+           d="M90 68 L92 16 C92 10 98 8 104 8 L138 8 C144 8 148 12 148 18 L150 68 Z"
+           fill="#1a1a1a"
+           id="path11" />
+        <rect
+           x="89"
+           y="54"
+           width="62"
+           height="12"
+           rx="2"
+           fill="#0d6e85"
+           stroke="none"
+           id="rect11" />
+      </g>
+      <circle
+         cx="97"
+         cy="140"
+         r="21"
+         fill="#ffffff"
+         id="circle11" />
+      <circle
+         cx="143"
+         cy="140"
+         r="21"
+         fill="#ffffff"
+         id="circle12" />
+      <circle
+         cx="101"
+         cy="143"
+         r="9"
+         fill="#1a1a1a"
+         stroke="none"
+         id="circle13" />
+      <circle
+         cx="139"
+         cy="143"
+         r="9"
+         fill="#1a1a1a"
+         stroke="none"
+         id="circle14" />
+      <circle
+         cx="104.5"
+         cy="139.5"
+         r="3"
+         fill="#ffffff"
+         stroke="none"
+         id="circle15" />
+      <circle
+         cx="142.5"
+         cy="139.5"
+         r="3"
+         fill="#ffffff"
+         stroke="none"
+         id="circle16" />
+      <path
+         d="M80 198 C 80 185, 160 185, 160 198 C 160 220, 141 232, 120 232 C 99 232, 80 220, 80 198 Z"
+         fill="#f6a81f"
+         id="path16" />
+      <path
+         d="M96 205 C 108 214, 132 214, 144 205"
+         fill="none"
+         stroke="#d98400"
+         stroke-width="5"
+         id="path17" />
+      <path
+         d="M120 186 C 130 178, 146 176, 156 179 C 168 182, 172 170, 165 166 C 163 175, 149 174, 139 176 C 131 178, 125 182, 120 186 Z"
+         fill="#1a1a1a"
+         stroke-width="3"
+         id="path18" />
+      <path
+         d="M120 186 C 110 178, 94 176, 84 179 C 72 182, 68 170, 75 166 C 77 175, 91 174, 101 176 C 109 178, 115 182, 120 186 Z"
+         fill="#1a1a1a"
+         stroke-width="3"
+         id="path19" />
+      <path
+         d="M120 228 L102 224 L116 244 Z"
+         fill="#ffffff"
+         id="path20" />
+      <path
+         d="M120 228 L138 224 L124 244 Z"
+         fill="#ffffff"
+         id="path21" />
+      <path
+         d="M120 244 L92 232 L92 256 Z"
+         fill="#1a1a1a"
+         id="path22" />
+      <path
+         d="M120 244 L148 232 L148 256 Z"
+         fill="#1a1a1a"
+         id="path23" />
+      <circle
+         cx="120"
+         cy="244"
+         r="8"
+         fill="#1a1a1a"
+         id="circle23" />
+    </g>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath40">
+      <rect
+         x="712"
+         y="188"
+         width="300"
+         height="318"
+         rx="10"
+         id="rect40" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath41">
+      <rect
+         x="712"
+         y="188"
+         width="300"
+         height="318"
+         rx="10"
+         id="rect41" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath42">
+      <rect
+         x="7.5"
+         y="-15"
+         width="250"
+         height="265"
+         rx="8.333333"
+         id="rect42"
+         style="stroke-width:0.833333" />
+    </clipPath>
+  </defs>
+  <!-- backdrop -->
+  <rect
+     width="1200"
+     height="630"
+     fill="url(#bg)"
+     id="rect23" />
+  <!-- ===== header / wordmark ===== -->
+  <g
+     transform="translate(72,70)"
+     id="g24">
+    <rect
+       x="0"
+       y="-26"
+       width="48"
+       height="48"
+       rx="12"
+       fill="url(#chip)"
+       id="rect24" />
+    <use
+       href="#duck"
+       transform="translate(3.6,-24.5) scale(0.173)"
+       id="use24" />
+    <text
+       x="64"
+       y="8"
+       font-size="40"
+       font-weight="800"
+       letter-spacing="-1"
+       fill="#0f172a"
+       id="text24">photo<tspan
+   fill="#0d6e85"
+   id="tspan24">Duck</tspan></text>
+  </g>
+  <text
+     x="73"
+     y="118"
+     font-size="21"
+     font-weight="500"
+     fill="#64748b"
+     id="text25">Compliant passport &amp; ID photos, made simple.</text>
+  <!-- ===== LEFT: the "duck gentleman" painting ===== -->
+  <g
+     id="g31">
+    <rect
+       x="118"
+       y="164"
+       width="308"
+       height="364"
+       rx="14"
+       fill="url(#gold)"
+       id="rect25" />
+    <rect
+       x="132"
+       y="178"
+       width="280"
+       height="336"
+       rx="8"
+       fill="#6a4e18"
+       id="rect26" />
+    <rect
+       x="150"
+       y="196"
+       width="244"
+       height="300"
+       rx="6"
+       fill="url(#painting)"
+       id="rect27" />
+    <circle
+       cx="134"
+       cy="180"
+       r="7"
+       fill="#f3e3a6"
+       id="circle27" />
+    <circle
+       cx="410"
+       cy="180"
+       r="7"
+       fill="#f3e3a6"
+       id="circle28" />
+    <circle
+       cx="134"
+       cy="512"
+       r="7"
+       fill="#f3e3a6"
+       id="circle29" />
+    <circle
+       cx="410"
+       cy="512"
+       r="7"
+       fill="#f3e3a6"
+       id="circle30" />
+    <g
+       clip-path="url(#paintClip)"
+       id="g30">
+      <use
+         href="#duck"
+         transform="translate(133,202) scale(1.13)"
+         id="use30" />
+    </g>
+    <text
+       x="272"
+       y="552"
+       font-size="17"
+       font-weight="600"
+       fill="#6a4e18"
+       text-anchor="middle"
+       id="text30">Your portrait</text>
+  </g>
+  <!-- ===== ARROW ===== -->
+  <g
+     transform="translate(470,330)"
+     id="g32">
+    <line
+       x1="0"
+       y1="10"
+       x2="150"
+       y2="10"
+       stroke="#0d6e85"
+       stroke-width="7"
+       stroke-linecap="round"
+       id="line31" />
+    <path
+       d="M142 -6 L176 10 L142 26 Z"
+       fill="#0d6e85"
+       id="path31" />
+    <text
+       x="88"
+       y="-22"
+       font-size="18"
+       font-weight="700"
+       fill="#0d6e85"
+       text-anchor="middle"
+       id="text31">auto-align</text>
+    <text
+       x="88"
+       y="48"
+       font-size="18"
+       font-weight="700"
+       fill="#0d6e85"
+       text-anchor="middle"
+       id="text32">&amp; check</text>
+  </g>
+  <!-- ===== RIGHT: compliant document photo ===== -->
+  <rect
+     x="700"
+     y="176"
+     width="324"
+     height="342"
+     rx="16"
+     fill="#ffffff"
+     stroke="#cbd5e1"
+     stroke-width="2"
+     id="rect32" />
+  <rect
+     x="712"
+     y="188"
+     width="300"
+     height="318"
+     rx="10"
+     fill="#eef4f6"
+     id="rect33" />
+  <use
+     href="#duck"
+     transform="matrix(1.0720303,0,0,1.0720303,738.71152,182.47484)"
+     id="use33"
+     clip-path="url(#clipPath42)" />
+  <line
+     x1="712"
+     y1="250"
+     x2="1012"
+     y2="250"
+     stroke="#0d6e85"
+     stroke-width="2"
+     stroke-dasharray="7, 6"
+     id="line33"
+     clip-path="url(#clipPath41)" />
+  <line
+     x1="712"
+     y1="452"
+     x2="1012"
+     y2="452"
+     stroke="#0d6e85"
+     stroke-width="2"
+     stroke-dasharray="7, 6"
+     id="line34"
+     clip-path="url(#clipPath40)" />
+  <text
+     x="862"
+     y="548"
+     font-size="17px"
+     font-weight="600"
+     fill="#64748b"
+     text-anchor="middle"
+     id="text34">35 × 45 mm · compliant</text>
+  <!-- ===== compliance ticks ===== -->
+  <g
+     transform="translate(1036,214)"
+     font-size="18"
+     font-weight="600"
+     fill="#0f172a"
+     id="g40">
+    <g
+       id="g36">
+      <circle
+         cx="12"
+         cy="8"
+         r="13"
+         fill="#16a34a"
+         id="circle35" />
+      <path
+         d="M6 8 l4 4 l8 -9"
+         fill="none"
+         stroke="#fff"
+         stroke-width="3"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path35" />
+      <text
+         x="34"
+         y="14"
+         id="text35">Head size</text>
+    </g>
+    <g
+       transform="translate(0,56)"
+       id="g37">
+      <circle
+         cx="12"
+         cy="8"
+         r="13"
+         fill="#16a34a"
+         id="circle36" />
+      <path
+         d="M6 8 l4 4 l8 -9"
+         fill="none"
+         stroke="#fff"
+         stroke-width="3"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path36" />
+      <text
+         x="34"
+         y="14"
+         id="text36">Centered</text>
+    </g>
+    <g
+       transform="translate(0,112)"
+       id="g38">
+      <circle
+         cx="12"
+         cy="8"
+         r="13"
+         fill="#16a34a"
+         id="circle37" />
+      <path
+         d="M6 8 l4 4 l8 -9"
+         fill="none"
+         stroke="#fff"
+         stroke-width="3"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path37" />
+      <text
+         x="34"
+         y="14"
+         id="text37">Eyes open</text>
+    </g>
+    <g
+       transform="translate(0,168)"
+       id="g39">
+      <circle
+         cx="12"
+         cy="8"
+         r="13"
+         fill="#16a34a"
+         id="circle38" />
+      <path
+         d="M6 8 l4 4 l8 -9"
+         fill="none"
+         stroke="#fff"
+         stroke-width="3"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path38" />
+      <text
+         x="34"
+         y="14"
+         id="text38">Background</text>
+    </g>
+  </g>
+</svg>

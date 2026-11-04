@@ -1,0 +1,29 @@
+{
+  "name": "photoduck",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "photoDuck — create compliant passport, ID and visa biometric photos (EU 35×45 mm, Poland, US 2×2 in) privately in your browser.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit",
+    "setup:models": "node scripts/fetch-models.mjs",
+    "build:og": "node scripts/make-og-image.mjs"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^0.10.18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.23.15",
+    "typescript": "~5.6.3",
+    "vite": "^6.0.3"
+  }
+}

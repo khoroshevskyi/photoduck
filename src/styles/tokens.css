@@ -1,0 +1,68 @@
+/*
+ * Design tokens — "clean & trustworthy"
+ * Calm teal-blue accent, white surfaces, soft shadows, rounded cards.
+ * Colors are RGB triplets so utilities can do rgb(var(--x)) / rgba(var(--x), a).
+ */
+
+:root {
+  /* === COLORS === */
+  --color-primary: 13, 110, 133;
+  --color-primary-dark: 9, 78, 95;
+  --color-accent: 20, 160, 180;
+  --color-accent-soft: 224, 242, 245;
+
+  --color-text: 15, 23, 42;
+  --color-text-muted: 100, 116, 139;
+  --color-heading: 15, 23, 42;
+
+  --color-background: 244, 247, 250;
+  --color-surface: 255, 255, 255;
+  --color-surface-2: 241, 245, 249;
+  --color-border: 226, 232, 240;
+
+  --color-success: 22, 163, 74;
+  --color-warn: 202, 138, 4;
+  --color-danger: 220, 38, 38;
+  --color-info: 37, 99, 235;
+
+  /* === SPACING (4px grid) === */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* === TYPOGRAPHY === */
+  --font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* === RADIUS === */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* === SHADOWS === */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 6px 16px -4px rgba(15, 23, 42, 0.12);
+  --shadow-lg: 0 16px 40px -12px rgba(15, 23, 42, 0.18);
+  --shadow-xl: 0 24px 60px -16px rgba(15, 23, 42, 0.22);
+}

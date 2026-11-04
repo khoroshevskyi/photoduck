@@ -1,0 +1,27 @@
+{
+  "id": "european",
+  "order": 1,
+  "name": "European 35 × 45 mm",
+  "shortName": "European",
+  "badge": "35 × 45 mm",
+  "note": "EU passport / ID (Germany, Poland, Schengen visa & more).",
+  "photoMm": { "w": 35, "h": 45 },
+  "dpi": 300,
+  "faceHeightMm": { "min": 32, "max": 36, "target": 34 },
+  "crownTopMarginMm": 5,
+  "eyeLineFromBottomMm": { "min": 20, "max": 34 },
+  "backgroundOptions": [
+    { "id": "white", "label": "White", "color": "#ffffff" },
+    { "id": "light-grey", "label": "Light grey", "color": "#e9ecef" },
+    { "id": "grey", "label": "Grey", "color": "#c9ccd1" },
+    { "id": "light-blue", "label": "Light blue", "color": "#d6e4f0" }
+  ],
+  "defaultBackgroundColor": "#ffffff",
+  "backgroundReplacementPolicy": "discouraged",
+  "backgroundCheck": {
+    "label": "plain, light, evenly lit",
+    "targetColor": null,
+    "colorToleranceDelta": 30,
+    "uniformityDelta": 24
+  }
+}
