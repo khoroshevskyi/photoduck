@@ -3,8 +3,21 @@
 
 import type { Adjustments, CropTransform } from '../types';
 import type { DocumentPreset } from '../presets/documentPresets';
+import type { RawMask } from './segmentation';
+import {
+  DEFAULT_REFINE,
+  decontaminateComposite,
+  estimateBackgroundColor,
+  hexToRgb,
+  refineAlpha,
+  toGrayscale01,
+  type RefineOptions,
+} from './maskRefine';
 
 export type ImageLike = CanvasImageSource & { width: number; height: number };
+
+/** Longest edge (px) of the grid the mask refinement runs on. Balances quality vs. speed. */
+const REFINE_WORK_MAX = 1600;
 
 /** Build a CSS filter string from the -100..100 adjustment sliders. */
 export function filterString(adj: Adjustments): string {
@@ -20,35 +33,142 @@ export function filterString(adj: Adjustments): string {
 
 const clampF = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
 
-/** Composite a segmented subject over a solid background color. Returns a new canvas. */
-export function compositeBackground(
+/** A gray canvas (R=G=B=alpha·255, A=255) so alpha can be bilinearly scaled by the browser. */
+function alphaToCanvas(alpha: Float32Array, w: number, h: number): HTMLCanvasElement {
+  const canvas = document.createElement('canvas');
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext('2d')!;
+  const id = ctx.createImageData(w, h);
+  for (let i = 0; i < w * h; i++) {
+    const v = Math.max(0, Math.min(255, Math.round(alpha[i] * 255)));
+    const o = i * 4;
+    id.data[o] = v;
+    id.data[o + 1] = v;
+    id.data[o + 2] = v;
+    id.data[o + 3] = 255;
+  }
+  ctx.putImageData(id, 0, 0);
+  return canvas;
+}
+
+/** Bilinearly resample a raw mask onto a `w×h` grid, returning alpha in [0,1]. */
+function resampleRawMask(raw: RawMask, w: number, h: number): Float32Array {
+  const src = alphaToCanvas(raw.data, raw.w, raw.h);
+  const canvas = document.createElement('canvas');
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext('2d', { willReadFrequently: true })!;
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(src, 0, 0, raw.w, raw.h, 0, 0, w, h);
+  const d = ctx.getImageData(0, 0, w, h).data;
+  const out = new Float32Array(w * h);
+  for (let i = 0; i < out.length; i++) out[i] = d[i * 4] / 255;
+  return out;
+}
+
+/**
+ * The expensive, color-independent part of background replacement: refine the
+ * coarse mask against the source edges and produce a full-source-resolution
+ * alpha matte plus an estimate of the old background color (for spill removal).
+ * Cache this per image — recoloring only needs `compositeMatte`.
+ */
+export interface RefinedMatte {
+  /** refined alpha in [0,1], row-major, length W*H (full source resolution) */
+  alpha: Float32Array;
+  /** estimated original background color (0..255), used to cancel edge spill */
+  bgOld: [number, number, number];
+  W: number;
+  H: number;
+}
+
+export function refineMatte(
   source: ImageLike,
-  maskCanvas: HTMLCanvasElement,
+  raw: RawMask,
+  opts: RefineOptions = DEFAULT_REFINE,
+): RefinedMatte {
+  const W = source.width;
+  const H = source.height;
+  const { roi } = raw;
+
+  // 1. Working grid over the ROI (cap the longest edge for speed).
+  const wScale = Math.min(1, REFINE_WORK_MAX / Math.max(roi.w, roi.h));
+  const ww = Math.max(1, Math.round(roi.w * wScale));
+  const wh = Math.max(1, Math.round(roi.h * wScale));
+
+  // 2. Guide = source ROI at working resolution.
+  const guideCanvas = document.createElement('canvas');
+  guideCanvas.width = ww;
+  guideCanvas.height = wh;
+  const gctx = guideCanvas.getContext('2d', { willReadFrequently: true })!;
+  gctx.drawImage(source, roi.x, roi.y, roi.w, roi.h, 0, 0, ww, wh);
+  const guideRGBA = gctx.getImageData(0, 0, ww, wh).data;
+  const guideGray = toGrayscale01(guideRGBA, ww * wh);
+
+  // 3. Refine the coarse alpha against the guide edges.
+  const rawAlpha = resampleRawMask(raw, ww, wh);
+  const refined = refineAlpha(guideGray, rawAlpha, ww, wh, opts);
+
+  // 4. Estimate the old background color from low-alpha guide pixels (spill removal).
+  const bgOld = estimateBackgroundColor(guideRGBA, refined);
+
+  // 5. Upscale refined alpha (working ROI → full source; zero outside the ROI).
+  const alphaCanvas = alphaToCanvas(refined, ww, wh);
+  const fullAlpha = document.createElement('canvas');
+  fullAlpha.width = W;
+  fullAlpha.height = H;
+  const factx = fullAlpha.getContext('2d', { willReadFrequently: true })!;
+  factx.imageSmoothingQuality = 'high';
+  factx.fillStyle = '#000000'; // alpha 0 ⇒ pure background outside the ROI
+  factx.fillRect(0, 0, W, H);
+  factx.drawImage(alphaCanvas, 0, 0, ww, wh, roi.x, roi.y, roi.w, roi.h);
+  const alphaRGBA = factx.getImageData(0, 0, W, H).data;
+  const n = W * H;
+  const alpha = new Float32Array(n);
+  for (let i = 0; i < n; i++) alpha[i] = alphaRGBA[i * 4] / 255;
+
+  return { alpha, bgOld, W, H };
+}
+
+/**
+ * The cheap, color-dependent part: lay the matted subject over a solid color,
+ * cancelling the old background spill. Returns a full-source-size canvas (so the
+ * editor transform maps it exactly like the original source).
+ */
+export function compositeMatte(
+  source: ImageLike,
+  matte: RefinedMatte,
   color: string,
 ): HTMLCanvasElement {
-  const w = source.width;
-  const h = source.height;
+  const { alpha, bgOld, W, H } = matte;
+
+  // Full-resolution source pixels (keeps interior detail at native quality).
+  const srcCanvas = document.createElement('canvas');
+  srcCanvas.width = W;
+  srcCanvas.height = H;
+  const sctx = srcCanvas.getContext('2d', { willReadFrequently: true })!;
+  sctx.drawImage(source, 0, 0);
+  const srcRGBA = sctx.getImageData(0, 0, W, H).data;
+
+  const outData = decontaminateComposite(srcRGBA, alpha, bgOld, hexToRgb(color), W * H);
   const out = document.createElement('canvas');
-  out.width = w;
-  out.height = h;
-  const octx = out.getContext('2d')!;
-
-  // Background fill.
-  octx.fillStyle = color;
-  octx.fillRect(0, 0, w, h);
-
-  // Subject = source masked by alpha.
-  const subject = document.createElement('canvas');
-  subject.width = w;
-  subject.height = h;
-  const sctx = subject.getContext('2d')!;
-  sctx.drawImage(source, 0, 0, w, h);
-  sctx.globalCompositeOperation = 'destination-in';
-  sctx.drawImage(maskCanvas, 0, 0, w, h);
-  sctx.globalCompositeOperation = 'source-over';
-
-  octx.drawImage(subject, 0, 0);
+  out.width = W;
+  out.height = H;
+  out.getContext('2d')!.putImageData(new ImageData(outData, W, H), 0, 0);
   return out;
+}
+
+/**
+ * Convenience: refine + composite in one call. Returns a new full-source-size
+ * canvas with the subject over a solid color.
+ */
+export function compositeBackground(
+  source: ImageLike,
+  raw: RawMask,
+  color: string,
+  opts: RefineOptions = DEFAULT_REFINE,
+): HTMLCanvasElement {
+  return compositeMatte(source, refineMatte(source, raw, opts), color);
 }
 
 export interface RenderArgs {
