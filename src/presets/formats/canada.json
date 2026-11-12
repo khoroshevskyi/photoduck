@@ -1,0 +1,25 @@
+{
+  "id": "canada",
+  "order": 8,
+  "name": "Canada 50 × 70 mm",
+  "shortName": "Canada",
+  "badge": "50 × 70 mm",
+  "note": "Canadian passport — 50 × 70 mm, plain white background, face 31–36 mm. Note: Canada requires an unaltered photo stamped by a commercial photographer; use this preset for visa or reference purposes.",
+  "photoMm": { "w": 50, "h": 70 },
+  "dpi": 300,
+  "faceHeightMm": { "min": 31, "max": 36, "target": 33 },
+  "crownTopMarginMm": 8,
+  "eyeLineFromBottomMm": { "min": 40, "max": 50 },
+  "backgroundOptions": [
+    { "id": "white", "label": "White", "color": "#ffffff" },
+    { "id": "light-grey", "label": "Light grey", "color": "#e9ecef" }
+  ],
+  "defaultBackgroundColor": "#ffffff",
+  "backgroundReplacementPolicy": "prohibited",
+  "backgroundCheck": {
+    "label": "plain white or light",
+    "targetColor": null,
+    "colorToleranceDelta": 30,
+    "uniformityDelta": 22
+  }
+}

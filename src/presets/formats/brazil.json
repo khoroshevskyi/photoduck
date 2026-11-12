@@ -1,0 +1,24 @@
+{
+  "id": "brazil",
+  "order": 6,
+  "name": "Brazil 50 × 70 mm",
+  "shortName": "Brazil",
+  "badge": "50 × 70 mm",
+  "note": "Brazilian passport — 50 × 70 mm, plain white background, neutral expression. For a US visa from Brazil, use the US 2 × 2 in format instead.",
+  "photoMm": { "w": 50, "h": 70 },
+  "dpi": 300,
+  "faceHeightMm": { "min": 31, "max": 36, "target": 33 },
+  "crownTopMarginMm": 8,
+  "eyeLineFromBottomMm": { "min": 40, "max": 50 },
+  "backgroundOptions": [
+    { "id": "white", "label": "White", "color": "#ffffff" }
+  ],
+  "defaultBackgroundColor": "#ffffff",
+  "backgroundReplacementPolicy": "prohibited",
+  "backgroundCheck": {
+    "label": "plain white",
+    "targetColor": "#ffffff",
+    "colorToleranceDelta": 30,
+    "uniformityDelta": 22
+  }
+}

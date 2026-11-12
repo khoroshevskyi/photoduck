@@ -1,0 +1,25 @@
+{
+  "id": "germany",
+  "order": 5,
+  "name": "Germany 35 × 45 mm",
+  "shortName": "Germany",
+  "badge": "35 × 45 mm",
+  "note": "German passport & ID (Reisepass / Personalausweis) — 35 × 45 mm, plain light-grey background preferred, neutral expression.",
+  "photoMm": { "w": 35, "h": 45 },
+  "dpi": 300,
+  "faceHeightMm": { "min": 32, "max": 36, "target": 34 },
+  "crownTopMarginMm": 5,
+  "eyeLineFromBottomMm": { "min": 20, "max": 34 },
+  "backgroundOptions": [
+    { "id": "light-grey", "label": "Light grey", "color": "#e9ecef" },
+    { "id": "white", "label": "White", "color": "#ffffff" }
+  ],
+  "defaultBackgroundColor": "#e9ecef",
+  "backgroundReplacementPolicy": "discouraged",
+  "backgroundCheck": {
+    "label": "plain light grey",
+    "targetColor": null,
+    "colorToleranceDelta": 30,
+    "uniformityDelta": 24
+  }
+}

@@ -10,6 +10,25 @@ export function Footer() {
       <p className="text-xs">
         photoDuck · Passport, ID &amp; visa photos · Not affiliated with any government authority.
       </p>
+      <p className="site-footer__links">
+        <a
+          className="site-footer__link"
+          href="https://molfar.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Project by molfar.dev
+        </a>
+        <a
+          className="site-footer__link"
+          href="https://github.com/khoroshevskyi/photoduck"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon name="github" size={14} />
+          GitHub
+        </a>
+      </p>
     </footer>
   );
 }

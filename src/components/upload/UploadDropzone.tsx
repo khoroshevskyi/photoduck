@@ -28,8 +28,8 @@ export function UploadDropzone() {
         </h1>
         <p className="hero__subtitle">
           Pick your document type, drop in a portrait, and photoDuck auto-aligns the face, checks
-          every compliance rule, and hands you a print-ready photo plus a print sheet. European
-          35 × 45 mm, Poland and US 2 × 2 in supported.
+          every compliance rule, and hands you a print-ready photo plus a print sheet. Passport, ID
+          and visa formats for 15+ countries — the US, India, UK, EU, Canada, Australia and more.
         </p>
         <img
           className="hero__art"

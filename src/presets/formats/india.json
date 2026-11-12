@@ -1,0 +1,24 @@
+{
+  "id": "india",
+  "order": 2,
+  "name": "India 2 × 2 in (visa / OCI)",
+  "shortName": "India",
+  "badge": "2 × 2 in",
+  "note": "India visa / OCI / e-visa — 2 × 2 in (50.8 mm), plain white background, neutral expression. (Domestic passport photos are captured on-site at the Seva Kendra.)",
+  "photoMm": { "w": 50.8, "h": 50.8 },
+  "dpi": 300,
+  "faceHeightMm": { "min": 25, "max": 35, "target": 30 },
+  "crownTopMarginMm": 7,
+  "eyeLineFromBottomMm": { "min": 28, "max": 35 },
+  "backgroundOptions": [
+    { "id": "white", "label": "White", "color": "#ffffff" }
+  ],
+  "defaultBackgroundColor": "#ffffff",
+  "backgroundReplacementPolicy": "prohibited",
+  "backgroundCheck": {
+    "label": "plain white",
+    "targetColor": "#ffffff",
+    "colorToleranceDelta": 30,
+    "uniformityDelta": 22
+  }
+}

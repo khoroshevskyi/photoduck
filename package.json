@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "photoDuck — create compliant passport, ID and visa biometric photos (EU 35×45 mm, Poland, US 2×2 in) privately in your browser.",
+  "description": "photoDuck — create compliant passport, ID and visa biometric photos for 15+ countries (US, India, UK, EU, Canada, Australia and more) privately in your browser.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

@@ -1,0 +1,25 @@
+{
+  "id": "france",
+  "order": 7,
+  "name": "France 35 × 45 mm",
+  "shortName": "France",
+  "badge": "35 × 45 mm",
+  "note": "French passport & ID (passeport / carte d'identité) — 35 × 45 mm, plain light-grey background (no pure white), neutral expression.",
+  "photoMm": { "w": 35, "h": 45 },
+  "dpi": 300,
+  "faceHeightMm": { "min": 32, "max": 36, "target": 34 },
+  "crownTopMarginMm": 5,
+  "eyeLineFromBottomMm": { "min": 20, "max": 34 },
+  "backgroundOptions": [
+    { "id": "light-grey", "label": "Light grey", "color": "#e9ecef" },
+    { "id": "grey", "label": "Grey", "color": "#c9ccd1" }
+  ],
+  "defaultBackgroundColor": "#e9ecef",
+  "backgroundReplacementPolicy": "discouraged",
+  "backgroundCheck": {
+    "label": "plain light grey",
+    "targetColor": null,
+    "colorToleranceDelta": 30,
+    "uniformityDelta": 24
+  }
+}

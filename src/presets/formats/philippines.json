@@ -1,0 +1,24 @@
+{
+  "id": "philippines",
+  "order": 16,
+  "name": "Philippines 2 × 2 in",
+  "shortName": "Philippines",
+  "badge": "2 × 2 in",
+  "note": "Philippine visa / ID / document photo — 2 × 2 in (50.8 mm), plain white background, neutral expression. (DFA passport photos are captured on-site.)",
+  "photoMm": { "w": 50.8, "h": 50.8 },
+  "dpi": 300,
+  "faceHeightMm": { "min": 25, "max": 35, "target": 30 },
+  "crownTopMarginMm": 7,
+  "eyeLineFromBottomMm": { "min": 28, "max": 35 },
+  "backgroundOptions": [
+    { "id": "white", "label": "White", "color": "#ffffff" }
+  ],
+  "defaultBackgroundColor": "#ffffff",
+  "backgroundReplacementPolicy": "prohibited",
+  "backgroundCheck": {
+    "label": "plain white",
+    "targetColor": "#ffffff",
+    "colorToleranceDelta": 30,
+    "uniformityDelta": 22
+  }
+}

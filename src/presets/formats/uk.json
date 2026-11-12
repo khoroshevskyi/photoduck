@@ -1,0 +1,25 @@
+{
+  "id": "uk",
+  "order": 4,
+  "name": "United Kingdom 35 × 45 mm",
+  "shortName": "UK",
+  "badge": "35 × 45 mm",
+  "note": "UK passport — 35 × 45 mm, plain light-grey or cream background (not pure white), neutral expression.",
+  "photoMm": { "w": 35, "h": 45 },
+  "dpi": 300,
+  "faceHeightMm": { "min": 29, "max": 34, "target": 31 },
+  "crownTopMarginMm": 5,
+  "eyeLineFromBottomMm": { "min": 20, "max": 34 },
+  "backgroundOptions": [
+    { "id": "light-grey", "label": "Light grey", "color": "#e9ecef" },
+    { "id": "cream", "label": "Cream", "color": "#f3efe6" }
+  ],
+  "defaultBackgroundColor": "#e9ecef",
+  "backgroundReplacementPolicy": "discouraged",
+  "backgroundCheck": {
+    "label": "plain light grey or cream",
+    "targetColor": null,
+    "colorToleranceDelta": 30,
+    "uniformityDelta": 24
+  }
+}

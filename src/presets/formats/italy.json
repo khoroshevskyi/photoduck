@@ -1,0 +1,25 @@
+{
+  "id": "italy",
+  "order": 12,
+  "name": "Italy 35 × 45 mm",
+  "shortName": "Italy",
+  "badge": "35 × 45 mm",
+  "note": "Italian passport & ID — 35 × 45 mm, plain white or very light background, neutral expression.",
+  "photoMm": { "w": 35, "h": 45 },
+  "dpi": 300,
+  "faceHeightMm": { "min": 32, "max": 36, "target": 34 },
+  "crownTopMarginMm": 5,
+  "eyeLineFromBottomMm": { "min": 20, "max": 34 },
+  "backgroundOptions": [
+    { "id": "white", "label": "White", "color": "#ffffff" },
+    { "id": "off-white", "label": "Off-white", "color": "#f7f7f4" }
+  ],
+  "defaultBackgroundColor": "#ffffff",
+  "backgroundReplacementPolicy": "discouraged",
+  "backgroundCheck": {
+    "label": "plain white or very light",
+    "targetColor": "#ffffff",
+    "colorToleranceDelta": 32,
+    "uniformityDelta": 24
+  }
+}
