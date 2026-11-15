@@ -86,6 +86,21 @@ selfie against a plain wall works great.
 
 ---
 
+## 🤝 Contributing
+
+photoDuck is open source and contributions are welcome — whether you've spotted a bug, have
+an idea, or want to improve the app.
+
+> 📌 **Want to add a new country or photo size?**
+> Please **[open a pull request](https://github.com/khoroshevskyi/photoduck/pulls)**!
+> New document formats are just a small JSON file (no coding needed to describe the rules),
+> so adding your country's passport, ID, or visa format is one of the easiest ways to help.
+> The same goes for new picture types and sizes.
+
+Not sure where to start? Opening an issue first is always a good way to ask.
+
+---
+
 <br>
 
 ---
